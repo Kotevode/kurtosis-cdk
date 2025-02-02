@@ -22,14 +22,14 @@ DEFAULT_DEPLOYMENT_STAGES = {
     # Deploy CDK bridge UI.
     "deploy_cdk_bridge_ui": True,
     # Deploy the agglayer.
-    "deploy_agglayer": True,
+    "deploy_agglayer": False,
     # Deploy cdk-erigon node.
     # TODO: Remove this parameter to incorporate cdk-erigon inside the central environment.
     "deploy_cdk_erigon_node": True,
     # Deploy Optimism rollup.
-    "deploy_optimism_rollup": False,
+    "deploy_optimism_rollup": True,
     # Deploy contracts on L2 (as well as fund accounts).
-    "deploy_l2_contracts": False,
+    "deploy_l2_contracts": True,
 }
 
 DEFAULT_IMAGES = {
@@ -158,18 +158,18 @@ DEFAULT_ACCOUNTS = {
 
 DEFAULT_L1_ARGS = {
     # The L1 network identifier.
-    "l1_chain_id": 271828,
+    "l1_chain_id": 2390,
     # This mnemonic will:
     # a) be used to create keystores for all the types of validators that we have, and
     # b) be used to generate a CL genesis.ssz that has the children validator keys already
     # preregistered as validators
     "l1_preallocated_mnemonic": "giant issue aisle success illegal bike spike question tent bar rely arctic volcano long crawl hungry vocal artwork sniff fantasy very lucky have athlete",
     # The L1 HTTP RPC endpoint.
-    "l1_rpc_url": "http://el-1-geth-lighthouse:8545",
+    "l1_rpc_url": "https://turin.rpc.tac.build",
     # The L1 WS RPC endpoint.
-    "l1_ws_url": "ws://el-1-geth-lighthouse:8546",
+    "l1_ws_url": "wss://turin.rpc.tac.build",
     # The L1 concensus layer RPC endpoint.
-    "l1_beacon_url": "http://cl-1-lighthouse-geth:4000",
+    "l1_beacon_url": "https://newyork-inap-72-251-230-233.ankr.com:443/tac_tacd_testnet_full_rpc_1",
     # The additional services to spin up.
     # Default: []
     # Options:
@@ -201,12 +201,12 @@ DEFAULT_L1_ARGS = {
     # "minimal" preset will spin up a network with minimal preset. This is useful for rapid testing and development.
     # 192 seconds to get to finalized epoch vs 1536 seconds with mainnet defaults
     # Please note that minimal preset requires alternative client images.
-    "l1_preset": "minimal",
+    "l1_preset": "mainnet",
     # Number of seconds per slot on the Beacon chain
     # Default: 12
     "l1_seconds_per_slot": 1,
     # The amount of ETH sent to the admin, sequence, aggregator, sequencer and other chosen addresses.
-    "l1_funding_amount": "1000000ether",
+    "l1_funding_amount": "1ether",
     # Default: 2
     "l1_participants_count": 1,
     # Whether to deploy https://github.com/AggLayer/lxly-bridge-and-call
